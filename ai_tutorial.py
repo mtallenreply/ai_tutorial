@@ -1,3 +1,6 @@
+"""
+Dies ist ein Tutorial Template zum Ausfüllen. Es ist als Vorlage gedacht um neues Wissen über Langchain anzuwenden.
+"""
 # Python Tutorial
 from langchain_core.tools import tool
 
@@ -45,10 +48,14 @@ def multiplizieren(non_default_argument_2:int,default_argument_1:int=2,)->int:
     """
     return non_default_argument_2*default_argument_1
 
-ergebnis:int=multiplizieren(234)
+ergebnis:int=multiplizieren.invoke(234)
 print(ergebnis)
 
-def funktionsname_3(non_default_argument1,non_default_argument2:int,default_argument1:int=1324,default_argument2:any=1234,*tuple_args,**dict_args):
+def funktionsname_3(non_default_argument1,
+                    non_default_argument2:int,
+                    default_argument1:int=1324,
+                    default_argument2:any=1234,
+                    *tuple_args,**dict_args):
     """
     Funktion multipliziert zwei Zahlen miteinander und liefert das Ergebnis zurück
 
@@ -67,15 +74,19 @@ def funktionsname_3(non_default_argument1,non_default_argument2:int,default_argu
     default_argument2:any
     listwargs:tuple=tuple_args
     keyvargs:dict=dict_args
-    print(non_default_argument1,non_default_argument2,default_argument1,default_argument2,tuple_args,dict_args,listwargs,keyvargs)
+    print(non_default_argument1,non_default_argument2,default_argument1,default_argument2,
+          tuple_args,dict_args,listwargs,keyvargs)
     return
-funktionsname_3(non_default_argument1="arg1",non_default_argument2=2,default_argument_1=234,default_argument2="sfeeg",*("tuplearg1","tuplearg2"),**{"test":1234})
+funktionsname_3(non_default_argument1="arg1",non_default_argument2=2,default_argument_1=234,default_argument2="sfeeg",
+                *("tuplearg1","tuplearg2"),**{"test":1234})
 
 # integer/Ganzahlen
 def datentypen_funktion():
     # integer
     a=10 # Variablen deklaration ohne typ hint
-    b:int=20   # variablen deklaration mit optionalen Typhinweis Vorteil: die IDE weiß besser Bescheid über das was du machen willst und kann helfen
+    # variablen deklaration mit optionalen Typhinweis Vorteil: die IDE weiß besser Bescheid über
+    # das was du machen willst und kann helfen
+    b:int=20
     erster_wert = 10
     zweiter_wert = 20
     ergebnis = erster_wert + zweiter_wert
@@ -87,7 +98,7 @@ def datentypen_funktion():
 
     print(a+b) # Ausgaben mit print()
     print("Hier eine Variante ohne fstring a+b=", a+b) # Ausgabe von eineme literal und einer Variablen
-    print(f"Eine zusätzliche Erklärung der obigen Ausgabe in Form eines Textes {a+b=}") # andere Möglichkeit einer Ausgabe
+    print(f"Eine zusätzliche Erklärung der obigen Ausgabe in Form eines Textes {a+b=}") # andere Möglichkeit der Ausgabe
 
     # Strings/Texte
     satzanfang:str="Hier grast "
@@ -110,18 +121,18 @@ def datentypen_funktion():
 
     # if elif else / wenn dann
     if len(list_integer)>=5: # größer gleich 4
-      print("schlecht")
+        print("schlecht")
     elif list_integer[0]!=0: # ungleich 0
-      print("schlecht")
+        print("schlecht")
     elif len(list_integer)>=4: # größer gleich 4
-      print("gut")
+        print("gut")
     else:
-      print("schlecht")
+        print("schlecht")
 
       # for loop/ for Schleife
-      liste2 = []
-      for element in list_integer:
-          liste2.append(f"Nr. {element}")
-      print(liste2)
-      list_comrehension_example = [f"Nr. {element}" for element in list_integer]  # kompaktere Variante
-      print("kompaktere Version (im code):", list_comrehension_example)
+    liste2 = []
+    for element in list_integer:
+      liste2.append(f"Nr. {element}")
+    print(liste2)
+    list_comrehension_example = [f"Nr. {element}" for element in list_integer]  # kompaktere Variante
+    print("kompaktere Version (im code):", list_comrehension_example)

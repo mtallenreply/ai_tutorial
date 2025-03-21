@@ -1,8 +1,9 @@
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
-from langchain_core.output_parsers import PydanticToolsParser, StrOutputParser
+"""
+Dies ist ein Tutorial Template zum Ausfüllen. Es ist als Vorlage gedacht um neues Wissen über Langchain anzuwenden.
+"""
+from langchain_core.output_parsers import  StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain_core.runnables.utils import Output
-from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
 from langchain_core.tools import tool
 
@@ -80,7 +81,7 @@ def chain_chain_tool(argument="Nüsse")->Output:
     # ChatPrompt
     print(__name__,__file__)
     template1=ChatPromptTemplate.from_template("Gib mir ein Rezept mit: {ai_argument} auf Deutsch")
-    template2=ChatPromptTemplate.from_template("{recipe} zu welcher Kategorie gehört das Rezept?Benutze das layout_tool ")
+    template2=ChatPromptTemplate.from_template("{recipe} zu welcher Kategorie gehört das Rezept? Benutze layout_tool")
     llm=ChatOllama(model="llama3")
     llm_with_tools=ChatOllama(model="llama3-groq-tool-use").bind_tools(tools=[layout_tool])
     parser=StrOutputParser()
@@ -96,5 +97,3 @@ for i in range(10):
     print(ergebnis)
 
 # print(chain_chain_tool())
-
-
